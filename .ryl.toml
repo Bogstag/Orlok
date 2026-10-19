@@ -1,0 +1,29 @@
+#:schema file:///home/bogge/.config/ryl/ryl.json
+# tombi: format.rules.table-keys-order = "ascending"
+
+exclude = ["source/*", "templates/*"]
+
+[files]
+  markdown = ["**/*.md"]
+  yaml = ["*.yaml", "*.yml", ".yamllint"]
+
+[format]
+  quote-style = "double"
+
+[lint.rules]
+  ALL = "enable"
+  document-end = "disable"
+  document-start = "disable"  # default on
+
+[lint.rules.quoted-strings]
+  level = "error"
+  quote-type = "double"
+  required = "only-when-needed"
+  allow-quoted-quotes = true
+  allow-double-quotes-for-escaping = true
+  check-keys = false
+
+[lint.rules.truthy]
+  allowed-values = ["true", "false", "on"]
+  check-keys = true
+  level = "error"

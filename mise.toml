@@ -1,0 +1,30 @@
+[tools]
+  node = "26.12.0"
+  npm = "12.2.1"
+  "npm:@types/node" = "latest"
+  "npm:tsx" = "latest"
+  "npm:typescript" = "latest"
+
+[env]
+  NODE_ENV = { default = "development" }
+  _.path = ["{{config_root}}/node_modules/.bin"]
+
+[deps.npm]
+  auto = true
+
+[settings]
+  idiomatic_version_file_enable_tools = ["node", "npm"]
+  idiomatic_version_file_disable_files = ["node:package.json"]
+  npm.package_manager = "npm"
+  experimental = true
+
+[tasks.install]
+  alias = "i"
+  description = "Install dependencies with npm"
+  run = "npm install"
+  sources = ["package.json", "package-lock.json", "mise.toml"]
+  outputs = ["package-lock.json"]
+
+[tasks.swap]
+  description = "Run Swapper on current file"
+  run = "npm run swap"

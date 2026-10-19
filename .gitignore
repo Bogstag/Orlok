@@ -1,0 +1,8 @@
+!work-notes/
+.agents/
+.codegraph/
+.vscode/
+/after_get*
+/vscode.json
+node_modules/
+sceenshots/NotMine-*

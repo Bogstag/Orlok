@@ -1,0 +1,14 @@
+#:schema https://www.schemastore.org/tombi.json
+
+toml-version = "v1.1.0"
+
+[files]
+  include = ["**/*.toml"]
+  exclude = ["source/*"]
+
+[format]
+  rules = {
+    indent-table-key-value-pairs = true,  # default: false
+    line-width = 100,                     # default: 2
+    trailing-comment-alignment = true,    # default: false
+  }
