@@ -9,8 +9,8 @@ import {
 } from "node:fs";
 import { basename, join, resolve } from "node:path";
 
-const colorPath = process.argv[2];
-const sourceInput = process.argv[3];
+const colorPath = process.argv[2],
+  sourceInput = process.argv[3];
 
 if (!colorPath || !sourceInput) {
   console.error(
@@ -26,17 +26,27 @@ function listSourceFiles(path: string): string[] {
     throw new Error(`Source paths cannot be symbolic links: ${path}`);
   }
 
-  if (info.isFile()) return [path];
+  if (info.isFile()) {
+    return [path];
+  }
   if (!info.isDirectory()) {
-    throw new Error(`Source path is not a file or directory: ${path}`);
+    throw new Error(
+      `Source path is not a file or directory: ${path}`,
+    );
   }
 
-  return readdirSync(path, { withFileTypes: true }).flatMap((entry) => {
-    const entryPath = join(path, entry.name);
-    if (entry.isDirectory()) return listSourceFiles(entryPath);
-    if (entry.isFile()) return [entryPath];
-    return [];
-  });
+  return readdirSync(path, { withFileTypes: true }).flatMap(
+    (entry) => {
+      const entryPath = join(path, entry.name);
+      if (entry.isDirectory()) {
+        return listSourceFiles(entryPath);
+      }
+      if (entry.isFile()) {
+        return [entryPath];
+      }
+      return [];
+    },
+  );
 }
 
 try {
@@ -50,11 +60,13 @@ try {
     throw new Error(`Color theme file does not exist: ${colorPath}`);
   }
   if (!existsSync(absoluteSourcePath)) {
-    throw new Error(`Source file or directory does not exist: ${sourceInput}`);
+    throw new Error(
+      `Source file or directory does not exist: ${sourceInput}`,
+    );
   }
 
-  const colorContent = readFileSync(absoluteColorPath, "utf-8");
-  const sourceFiles = listSourceFiles(absoluteSourcePath).sort();
+  const colorContent = readFileSync(absoluteColorPath, "utf-8"),
+    sourceFiles = listSourceFiles(absoluteSourcePath).sort();
   if (sourceFiles.length === 0) {
     throw new Error(`No source files found: ${sourceInput}`);
   }
@@ -76,8 +88,8 @@ try {
 
   const outputNames = new Map<string, string>();
   for (const sourceFile of sourceFiles) {
-    const outputName = `${basename(sourceFile)}.tpl`;
-    const previousSource = outputNames.get(outputName);
+    const outputName = `${basename(sourceFile)}.tpl`,
+      previousSource = outputNames.get(outputName);
     if (previousSource) {
       throw new Error(
         `Sources '${previousSource}' and '${sourceFile}' would both write 'tpl/${outputName}'.`,
@@ -90,15 +102,19 @@ try {
     let content = readFileSync(sourceFile, "utf-8");
 
     for (const [hex, key] of colors) {
-      content = content.replaceAll(new RegExp(hex, "gi"), `{{ ${key} }}`);
+      content = content.replaceAll(
+        new RegExp(hex, "gi"),
+        `{{ ${key} }}`,
+      );
     }
 
     const outputPath = join(tplDir, `${basename(sourceFile)}.tpl`);
     writeFileSync(outputPath, content);
-    console.log(`Generated template: ${outputPath}`);
+    console.info(`Generated template: ${outputPath}`);
   }
 } catch (error) {
-  const errorMessage = error instanceof Error ? error.message : String(error);
+  const errorMessage =
+    error instanceof Error ? error.message : String(error);
   console.error(`Error processing files: ${errorMessage}`);
   process.exit(1);
 }

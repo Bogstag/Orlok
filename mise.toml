@@ -1,30 +1,45 @@
-[tools]
-  node = "26.12.0"
-  npm = "12.2.1"
-  "npm:@types/node" = "latest"
-  "npm:tsx" = "latest"
-  "npm:typescript" = "latest"
-
-[env]
-  NODE_ENV = { default = "development" }
-  _.path = ["{{config_root}}/node_modules/.bin"]
+#:schema https://mise.jdx.dev/schema/mise.json
+# tombi: format.rules.table-keys-order = "ascending"
 
 [deps.npm]
   auto = true
 
+[env]
+  NODE_ENV = { default = "development" }
+  _.path   = ["{{config_root}}/node_modules/.bin"]
+
 [settings]
-  idiomatic_version_file_enable_tools = ["node", "npm"]
+  idiomatic_version_file_enable_tools  = ["node", "npm"]
   idiomatic_version_file_disable_files = ["node:package.json"]
-  npm.package_manager = "npm"
-  experimental = true
+  npm.package_manager                  = "npm"
+  experimental                         = true
 
 [tasks.install]
-  alias = "i"
+  alias       = "i"
   description = "Install dependencies with npm"
-  run = "npm install"
-  sources = ["package.json", "package-lock.json", "mise.toml"]
-  outputs = ["package-lock.json"]
+  run         = "npm install"
+  sources     = ["package.json", "package-lock.json", "mise.toml"]
+  outputs     = ["package-lock.json"]
 
 [tasks.swap]
-  description = "Run Swapper on current file"
-  run = "npm run swap"
+  description = "Generate templates from a theme and source file or directory"
+  usage       = '''
+arg "<theme>" help="Path to the color theme TOML file"
+arg "<source>" help="Source file or directory to convert"
+'''
+  run         = 'tsx utils/swapper.ts "${usage_theme?}" "${usage_source?}"'
+
+[tasks.test] # TODO: Få bort italics, går ju inte och läsa.
+  description = "Pin versions"
+  run         = "mise use --pin node@latest npm@latest"
+
+[tools]
+  node                  = "26.12.0"
+  npm                   = "12.2.1"
+  "npm:@types/node"     = "latest"
+  "npm:knip"            = "latest"
+  "npm:oxfmt"           = "latest"
+  "npm:oxlint"          = "latest"
+  "npm:oxlint-tsgolint" = "latest"
+  "npm:tsx"             = "latest"
+  "npm:typescript"      = "latest"

@@ -1,0 +1,9 @@
+{
+  "$schema": "./node_modules/oxfmt/configuration_schema.json",
+  "ignorePatterns": ["dist/**", "*.min.js"],
+  "jsdoc": true,
+  "objectWrap": "collapse",
+  "printWidth": 70, // with colapse 100 is to long
+  "sortImports": true,
+  "sortPackageJson": { "sortScripts": true },
+}

@@ -1,0 +1,95 @@
+#
+#   ▒█████   ██▀███   ██▓     ▒█████   ██ ▄█▀
+# ▒██▒  ██▒▓██ ▒ ██▒▓██▒    ▒██▒  ██▒ ██▄█▒
+# ▒██░  ██▒▓██ ░▄█ ▒▒██░    ▒██░  ██▒▓███▄░
+# ▒██   ██░▒██▀▀█▄  ▒██░    ▒██   ██░▓██ █▄
+# ░ ████▓▒░░██▓ ▒██▒░██████▒░ ████▓▒░▒██▒ █▄
+# ░ ▒░▒░▒░ ░ ▒▓ ░▒▓░░ ▒░▓  ░░ ▒░▒░▒░ ▒ ▒▒ ▓▒
+#   ░ ▒ ▒░   ░▒ ░ ▒░░ ░ ▒  ░  ░ ▒ ▒░ ░ ░▒ ▒░
+# ░ ░ ░ ▒    ░░   ░   ░ ░   ░ ░ ░ ▒  ░ ░░ ░
+#     ░ ░     ░         ░  ░    ░ ░  ░  ░
+#
+# region Color Palette (Dracula spec)
+background           = "#282a36"  # Main background
+current_line         = "#6272a4"  # Semantic current line highlight token
+selection            = "#44475a"  # Text selection
+foreground           = "#f8f8f2"  # Default text
+comment              = "#6272a4"  # Comments, disabled code
+red                  = "#ff5555"  # Errors, warnings, deletion
+orange               = "#ffb86c"  # Numbers, constants, booleans
+yellow               = "#f1fa8c"  # Strings, text content
+green                = "#50fa7b"  # Functions, methods, inherited classes
+cyan                 = "#8be9fd"  # Classes, types, support, regex
+purple               = "#bd93f9"  # Instance reserved words, constants
+pink                 = "#ff79c6"  # Keywords, storage types
+# endregion
+#
+# region ANSI Color Palette (Dracula spec)
+AnsiBlack            = "#21222c"  # color0
+AnsiRed              = "#ff5555"  # color1
+AnsiGreen            = "#50fa7b"  # color2
+AnsiYellow           = "#f1fa8c"  # color3
+AnsiBlue             = "#bd93f9"  # color4
+AnsiMagenta          = "#ff79c6"  # color5
+AnsiCyan             = "#8be9fd"  # color6
+AnsiWhite            = "#f8f8f2"  # color7
+AnsiBrightBlack      = "#6272a4"  # color8
+AnsiBrightRed        = "#ff6e6e"  # color9
+AnsiBrightGreen      = "#69ff94"  # color10
+AnsiBrightYellow     = "#ffffa5"  # color11
+AnsiBrightBlue       = "#d6acff"  # color12
+AnsiBrightMagenta    = "#ff92df"  # color13
+AnsiBrightCyan       = "#a4ffff"  # color14
+AnsiBrightWhite      = "#ffffff"  # color15
+#
+# Alias: ANSI Color Palette
+color0               = "#21222c"  # AnsiBlack
+color1               = "#ff5555"  # AnsiRed
+color2               = "#50fa7b"  # AnsiGreen
+color3               = "#f1fa8c"  # AnsiYellow
+color4               = "#bd93f9"  # AnsiBlue
+color5               = "#ff79c6"  # AnsiMagenta
+color6               = "#8be9fd"  # AnsiCyan
+color7               = "#f8f8f2"  # AnsiWhite
+color8               = "#6272a4"  # AnsiBrightBlack
+color9               = "#ff6e6e"  # AnsiBrightRed
+color10              = "#69ff94"  # AnsiBrightGreen
+color11              = "#ffffa5"  # AnsiBrightYellow
+color12              = "#d6acff"  # AnsiBrightBlue
+color13              = "#ff92df"  # AnsiBrightMagenta
+color14              = "#a4ffff"  # AnsiBrightCyan
+color15              = "#ffffff"  # AnsiBrightWhite
+# endregion
+#
+# region UI Color Palette (Dracula spec)
+floating             = "#343746"
+background_lighter   = "#424450"
+background_light     = "#343746"
+background_dark      = "#21222c"
+background_darker    = "#191a21"
+#
+# Alias: Reverse UI Color Palette
+lighter_background   = "#424450"  # spec: Background Lighter
+light_background     = "#343746"  # spec: Background Light
+dark_background      = "#21222c"  # spec: Background Dark
+darker_background    = "#191a21"  # spec: Background Darker
+# endregion
+#
+# region Functional Colors (Dracula spec)
+functional_red       = "#de5735"  # Critical actions, alerts
+functional_orange    = "#a39514"  # Warnings, notifications
+functional_green     = "#089108"  # Success states
+functional_cyan      = "#0081d6"  # Information, links
+functional_purple    = "#815cd6"  # Focus indicators
+# endregion
+#
+# region Extended keys consumed by Omarchy templates (Neovim, shell, lock screen)
+accent               = "#bd93f9"  # Purple
+cursor               = "#f8f8f2"  # spec: Foreground
+selection_background = "#44475a"
+selection_foreground = "#f8f8f2"  # spec: Foreground
+muted                = "#6272a4"  # Comment / Current Line
+dark_foreground      = "#6272a4"
+light_foreground     = "#f8f8f2"
+bright_foreground    = "#ffffff"  # also used as the cursor color
+# endregion

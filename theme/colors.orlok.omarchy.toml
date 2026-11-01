@@ -1,0 +1,59 @@
+#
+#   ▒█████   ██▀███   ██▓     ▒█████   ██ ▄█▀
+# ▒██▒  ██▒▓██ ▒ ██▒▓██▒    ▒██▒  ██▒ ██▄█▒
+# ▒██░  ██▒▓██ ░▄█ ▒▒██░    ▒██░  ██▒▓███▄░
+# ▒██   ██░▒██▀▀█▄  ▒██░    ▒██   ██░▓██ █▄
+# ░ ████▓▒░░██▓ ▒██▒░██████▒░ ████▓▒░▒██▒ █▄
+# ░ ▒░▒░▒░ ░ ▒▓ ░▒▓░░ ▒░▓  ░░ ▒░▒░▒░ ▒ ▒▒ ▓▒
+#   ░ ▒ ▒░   ░▒ ░ ▒░░ ░ ▒  ░  ░ ▒ ▒░ ░ ░▒ ▒░
+# ░ ░ ░ ▒    ░░   ░   ░ ░   ░ ░ ░ ▒  ░ ░░ ░
+#     ░ ░     ░         ░  ░    ░ ░  ░  ░
+#                                for Omarchy
+# region Orlok Omarchy
+mode                 = "dark"
+accent               = "#ea4591"  # changed
+muted                = "#33394f"  # spec: current_line
+#
+# Backgrounds pastel gradient -n 8 424450 000000
+lighter_background   = "#30323a"  # spec: Background Lighter
+light_background     = "#28292f"  # new
+background           = "#202025"  # changed
+dark_background      = "#18181b"  # changed
+darker_background    = "#0e0e11"  # changed
+#
+# Foreground
+foreground           = "#f8f8f2"  # spec: foreground
+dark_foreground      = "#6272a4"  # spec: comment
+light_foreground     = "#ececec"  # changed
+bright_foreground    = "#ffffff"  # spec: ansibrightwhite
+#
+# colors
+red                  = "#ff5555"  # spec: red
+orange               = "#ffb86c"  # spec: orange
+yellow               = "#f1fa8c"  # spec: yellow
+green                = "#50fa7b"  # spec: green
+cyan                 = "#8be9fd"  # spec: cyan
+blue                 = "#bd93f9"  # new
+magenta              = "#ff79c6"  # new
+brown                = "#75493d"  # new
+purple               = "#bd93f9"  # spec: purple
+white                = "#f8f8f2"  # new
+black                = "#21222c"  # new
+#
+# bright colors
+bright_red           = "#ff6e6e"  # new
+bright_yellow        = "#ffffa5"  # new
+bright_green         = "#69ff94"  # new
+bright_cyan          = "#a4ffff"  # new
+bright_blue          = "#d6acff"  # new
+bright_magenta       = "#ff92df"  # new
+bright_white         = "#ffffff"  # new
+bright_black         = "#6272a4"  # new
+#
+# region Extended keys consumed by Omarchy templates (Neovim, shell, lock screen)
+cursor               = "#f8f8f2"  # spec: Foreground
+# Foreground
+selection_foreground = "#21222c"  # new: pastel mix f8f8f2 44475a
+# Background
+selection_background = "#ffb86c"  # new: pastel mix 282a36 44475a
+# endregion

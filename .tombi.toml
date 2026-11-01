@@ -3,12 +3,120 @@
 toml-version = "v1.1.0"
 
 [files]
+  exclude = [".cache/**/*.toml", "**/modify_*.toml"]
   include = ["**/*.toml"]
-  exclude = ["source/*"]
 
 [format]
   rules = {
-    indent-table-key-value-pairs = true,  # default: false
-    line-width = 100,                     # default: 2
-    trailing-comment-alignment = true,    # default: false
+    indent-table-key-value-pairs    = true,  # default: false
+    key-value-equals-sign-alignment = true,  # default: false
+    line-width                      = 100,   # default: 2
+    trailing-comment-alignment      = true,  # default: false
+    # Defaults
+    #   array-bracket-space-width = 0,
+    #   array-comma-space-width = 1,
+    #   comment-style = "normalize",
+    #   date-time-delimiter = "T",
+    #   group-blank-lines-limit = 1,
+    #   indent-style = "space",
+    #   indent-sub-tables = false,
+    #   inline-table-brace-space-width = 1,
+    #   inline-table-comma-space-width = 1,
+    #   key-quote-style = "double",
+    #   key-value-equals-sign-space-width = 1,
+    #   line-ending = "lf",
+    #   string-quote-style = "double",
+    #   table-blank-lines = 1,
+    #   trailing-comment-space-width = 2,
   }
+
+[[schemas]]
+  path      = "https://www.schemastore.org/tombi.json"
+  include   = ["$HOME/.config/tombi/config.toml", "**/tombi/config.toml", "**/.tombi.toml"]
+  overrides = [
+    {
+      targets                         = ["*"],
+      format.rules.array-values-order = "ascending",
+      format.rules.table-keys-order   = "ascending",
+      lint.rules.deprecated           = "warn",
+    },
+  ]
+
+[[schemas]]
+  path      = "https://www.schemastore.org/chezmoi.json"
+  include   = ["$HOME/.config/chezmoi.toml", "**/.chezmoi.toml", "**/chezmoi.toml"]
+  overrides = [
+    {
+      targets                         = ["*"],
+      format.rules.array-values-order = "ascending",
+      format.rules.table-keys-order   = "ascending",
+      lint.rules.deprecated           = "warn",
+    },
+  ]
+
+[[schemas]]
+  path      = "https://yazi-rs.github.io/schemas/package.json"
+  include   = ["$HOME/.config/yazi/package.toml", "**/yazi/package.toml"]
+  overrides = [
+    {
+      targets                         = ["*"],
+      format.rules.array-values-order = "ascending",
+      format.rules.table-keys-order   = "ascending",
+      lint.rules.deprecated           = "warn",
+    },
+  ]
+
+[[schemas]]
+  path      = "https://www.schemastore.org/ryl.json"
+  include   = ["**/ryl/.ryl.toml", "$HOME/.config/ryl/.ryl.toml"]
+  overrides = [
+    {
+      targets                         = ["*"],
+      format.rules.array-values-order = "ascending",
+      format.rules.table-keys-order   = "ascending",
+      lint.rules.deprecated           = "warn",
+    },
+  ]
+
+[[schemas]]
+  path      = "https://mise.jdx.dev/schema/mise-task.json"
+  include   = [
+    "**/tasks.toml",
+    "**/config.toml",
+    "**/mise.toml",
+    "**/miserc.toml",
+    "**/tasks.toml.tmpl"
+  ]
+  overrides = [
+    {
+      targets                         = ["*"],
+      format.rules.array-values-order = "ascending",
+      format.rules.table-keys-order   = "ascending",
+      lint.rules.deprecated           = "warn",
+    },
+  ]
+
+[[schemas]]
+  path      = "https://mise.jdx.dev/schema/mise.json"
+  include   = ["**/mise.toml", "$HOME/.config/mise/config.toml", "**/mise/config.toml"]
+  overrides = [
+    {
+      targets                         = ["*"],
+      format.rules.array-values-order = "ascending",
+      format.rules.table-keys-order   = "ascending",
+      lint.rules.deprecated           = "warn",
+    },
+  ]
+
+[[schemas]]
+  path      = "https://raw.githubusercontent.com/distinction-dev/alacritty-schema/main/alacritty/reference.json"
+  include   = ["**/alacritty.toml"]
+  strict    = false
+  overrides = [
+    {
+      targets                         = ["*"],
+      format.rules.array-values-order = "ascending",
+      format.rules.table-keys-order   = "ascending",
+      lint.rules.deprecated           = "warn",
+    },
+  ]

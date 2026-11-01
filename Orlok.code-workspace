@@ -1,0 +1,47 @@
+{
+  "folders": [
+    { "path": ".", "name": "Orlok" },
+    { "path": "/usr/share/omarchy/themes", "name": "OmarchyThemes" },
+    {
+      "path": "/usr/share/omarchy/default/themed",
+      "name": "OmarchyDefaultThemed",
+    },
+    {
+      "path": "/home/bogge/.local/state/omarchy/current",
+      "name": "OmarchyCurrentTheme",
+    },
+    {
+      "path": "/home/bogge/.config/omarchy/themes",
+      "name": "OmarchyUserThemes",
+    },
+    {
+      "path": "/home/bogge/.config/omarchy/themed",
+      "name": "OmarchyUserThemed",
+    },
+  ],
+  "settings": {
+    "oxc.path.oxfmt": "node_modules/.bin/oxfmt",
+    "oxc.path.oxlint": "node_modules/.bin/oxlint",
+    "oxc.path.tsgolint": "node_modules/.bin/tsgolint",
+    "oxc.lint.run": "onSave",
+    "oxc.fixKind": "all",
+    "oxc.enable": true,
+    "oxc.enable.oxlint": true,
+    "oxc.requireConfig": true,
+    "oxc.unusedDisableDirectives": "warn",
+    "files.exclude": {
+      "/usr/share/omarchy/themes/*": true,
+      "/usr/share/omarchy/default/themed/*": true,
+      "/home/bogge/.local/state/omarchy/current/*": true,
+      "/home/bogge/.config/omarchy/themes/*": true,
+      "/home/bogge/.config/omarchy/themed/*": true,
+    },
+    "search.exclude": {
+      "/usr/share/omarchy/themes/*": true,
+      "/usr/share/omarchy/default/themed/*": true,
+      "/home/bogge/.local/state/omarchy/current/*": true,
+      "/home/bogge/.config/omarchy/themes/*": true,
+      "/home/bogge/.config/omarchy/themed/*": true,
+    },
+  },
+}

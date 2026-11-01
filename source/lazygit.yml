@@ -1,0 +1,38 @@
+# DRACULA
+theme:
+  activeBorderColor:
+    - "#FF79C6"
+    - bold
+  cherryPickedCommitBgColor:
+    - "#8BE9FD"
+
+  cherryPickedCommitFgColor:
+    - "#6272A4"
+
+  defaultFgColor:
+    - "#F8F8F2"
+
+  inactiveBorderColor:
+    - "#BD93F9"
+
+  inactiveViewSelectedLineBgColor:
+    - bold
+
+  markedBaseCommitBgColor:
+    - "#F1FA8C"
+
+  markedBaseCommitFgColor:
+    - "#8BE9FD"
+
+  optionsTextColor:
+    - "#6272A4"
+
+  searchingActiveBorderColor:
+    - "#8BE9FD"
+    - bold
+
+  selectedLineBgColor:
+    - "#6272A4"
+
+  unstagedChangesColor:
+    - "#FF5555"

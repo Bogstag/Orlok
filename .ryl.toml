@@ -1,7 +1,7 @@
 #:schema file:///home/bogge/.config/ryl/ryl.json
 # tombi: format.rules.table-keys-order = "ascending"
 
-exclude = ["source/*", "templates/*"]
+exclude = ["**/node_modules/**"]
 
 [files]
   markdown = ["**/*.md"]
