@@ -1,0 +1,29 @@
+#:schema https://mise.jdx.dev/schema/mise-task.json
+# tombi: format.rules.table-keys-order = "ascending"
+
+[ConvertSource2Tpl]
+  description = "Generate templates from source by using dracula theme"
+  run         = "node utils/swapper.ts ./theme/colors.dracula.omarchy.toml ./source"
+
+[CopyTemplates2OmarchyUserThemed]
+  description = "Copy all templates to Omarchy User Themed Directory"
+  run         = [
+    "cp ./Templates/* $HOME/.config/omarchy/themed/",
+    "cp ./TemplatesUsable/* $HOME/.config/omarchy/themed/"
+  ]
+
+[CopyTheme2Color]
+  description = "Copy my theme to Orlok colors.toml"
+  run         = "cp ./theme/colors.orlok.omarchy.toml /usr/share/omarchy/themes/orlok/colors.toml"
+
+[swap]
+  description = "Generate templates from a theme and source file or directory"
+  run         = 'node utils/swapper.ts "${usage_theme?}" "${usage_source?}"'
+  usage       = '''
+arg "<theme>" help="Path to the color theme TOML file"
+arg "<source>" help="Source file or directory to convert"
+'''
+
+[test]
+  description = "Pin versions"
+  run         = "mise use --pin node@latest npm@latest"

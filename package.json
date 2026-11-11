@@ -2,27 +2,36 @@
   "$schema": "https://www.schemastore.org/package.json",
   "name": "orlok",
   "version": "0.0.1",
+  "private": true,
   "description": "Orlok Dark Theme based on Dracula Theme",
   "keywords": [
     "dark theme",
     "dracula",
-    "omarchy"
+    "omarchy",
+    "orlok"
   ],
   "license": "MIT",
   "author": "Bogstag",
+  "workspaces": [
+    "${workspaceFolder}"
+  ],
   "type": "module",
   "scripts": {
-    "pin:engines": "mise use --pin node@latest npm@latest",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "theme:build-all": "node utils/swapper.js colors.toml theme.yaml && node utils/swapper.js colors.toml another-theme.yaml"
+    "cli:copy-themes": "node src/copy-themes.ts",
+    "fmt": "oxfmt",
+    "fmt:check": "oxfmt --check",
+    "knip": "knip",
+    "lint": "oxlint --type-aware --type-check",
+    "lint:fix": "oxlint --fix --type-aware --type-check",
+    "test": "node --test utils/swapper.test.mjs"
   },
   "devDependencies": {
-    "@types/node": "^26.6.5",
-    "oxfmt": "^0.73.0",
-    "oxlint": "^1.88.0",
-    "oxlint-tsgolint": "^7.0.2004",
-    "tsx": "^4.23.15",
-    "typescript": "^7.0.2"
+    "@types/node": "26.6.6",
+    "knip": "6.45.1",
+    "oxfmt": "0.78.0",
+    "oxlint": "1.93.0",
+    "oxlint-tsgolint": "7.0.2006",
+    "typescript": "7.0.2"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx,mjs,cjs}": "npm run lint"
