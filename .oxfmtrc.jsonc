@@ -1,9 +1,33 @@
 {
-  "$schema": "./node_modules/oxfmt/configuration_schema.json",
-  "ignorePatterns": ["dist/**", "*.min.js"],
-  "jsdoc": true,
+  "$schema": "/home/bogge/.local/share/mise/installs/oxfmt/latest/node_modules/oxfmt/configuration_schema.json",
+  "allowSeparatedGroups": true,
+  "checkExportFrom": true,
+  "extendDefaultStyles": false,
+  "extends": "/home/bogge/.oxfmtrc.jsonc",
+  "ignoreDeclarationSort": true,
+  "ignorePatterns": ["*.min.js", "coverage/**", "dist/**", "test/snapshots/**", "vendor/**"],
   "objectWrap": "collapse",
+  "overrides": [
+    {
+      "files": ["**/*.jsonc", "[jsonc]", "**/*.json5", "[json5]"],
+      "options": { "trailingComma": "none" },
+    },
+  ],
   "printWidth": 70, // with colapse 100 is to long
-  "sortImports": true,
+  "sortImports": {
+    "groups": [
+      "type-import",
+      ["value-builtin", "value-external"],
+      { "newlinesBetween": true },
+      "type-internal",
+      "value-internal",
+      { "newlinesBetween": true },
+      ["type-parent", "type-sibling", "type-index"],
+      ["value-parent", "value-sibling", "value-index"],
+      { "newlinesBetween": true },
+      "unknown",
+    ],
+    "newlinesBetween": true,
+  },
   "sortPackageJson": { "sortScripts": true },
 }

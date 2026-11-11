@@ -1,0 +1,54 @@
+# EditorConfig is awesome: https://editorconfig.org
+# top-most EditorConfig file
+root = true
+
+[*]
+# Matches multiple files with brace expansion notation
+# Set default charset
+end_of_line = lf
+indent_style = space
+indent_size    = 2,
+max_line_length = 100
+insert_final_newline = true
+
+
+[*.{js,ts,cjs,cts,mjs,mts}]
+# 4 space indent
+end_of_line = lf
+indent_style = space
+indent_size    = 4,
+max_line_length = 100
+insert_final_newline = true
+
+[package.json]
+indent_size  = 2
+indent_style = space
+
+[renovate.json*]
+indent_style = tab
+
+
+[[json]]
+[*.json]
+indent_size  = 2
+indent_style = space
+
+[[jsonc]]
+[*.jsonc]
+indent_size  = 2
+indent_style = space
+
+
+[*.{yaml,yml}]
+indent_size  = 2
+indent_style = space
+
+[*.lua]
+# see https://github.com/CppCXY/EmmyLuaCodeStyle
+indent_size  = 4
+indent_style = spacef
+
+[[toml]]
+[*.toml]
+indent_size  = 2
+indent_style = space
