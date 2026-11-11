@@ -1,24 +1,5 @@
 {
-  "folders": [
-    { "path": ".", "name": "Orlok" },
-    { "path": "/usr/share/omarchy/themes", "name": "OmarchyThemes" },
-    {
-      "path": "/usr/share/omarchy/default/themed",
-      "name": "OmarchyDefaultThemed",
-    },
-    {
-      "path": "/home/bogge/.local/state/omarchy/current",
-      "name": "OmarchyCurrentTheme",
-    },
-    {
-      "path": "/home/bogge/.config/omarchy/themes",
-      "name": "OmarchyUserThemes",
-    },
-    {
-      "path": "/home/bogge/.config/omarchy/themed",
-      "name": "OmarchyUserThemed",
-    },
-  ],
+  "folders": [{ "path": ".", "name": "Orlok" }],
   "settings": {
     "oxc.path.oxfmt": "node_modules/.bin/oxfmt",
     "oxc.path.oxlint": "node_modules/.bin/oxlint",
