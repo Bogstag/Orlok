@@ -5,7 +5,6 @@
     "declarationMap": true,
     "exactOptionalPropertyTypes": false,
     "isolatedModules": true,
-    "jsx": "react-jsx",
     "lib": ["esnext"],
     // File Layout
     // "rootDir": "./src",
@@ -32,5 +31,7 @@
     "target": "esnext",
     "types": ["node"],
     "verbatimModuleSyntax": true
-  }
+  },
+  "include": ["./cli/*.ts", "./utils/*.ts"],
+  "exclude": ["dist", "build", "coverage"]
 }
