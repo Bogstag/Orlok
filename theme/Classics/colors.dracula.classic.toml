@@ -9,7 +9,7 @@
 #  ░ ░  ░   ░░   ░   ░   ▒   ░         ░░░ ░ ░   ░ ░    ░   ▒
 #    ░       ░           ░  ░░ ░         ░         ░  ░     ░  ░
 #  ░                         ░
-# region Color Palette (Dracula spec)
+# Color Palette (Dracula spec)
 background           = "#282a36"  # Main background
 current_line         = "#6272a4"  # Semantic current line highlight token
 selection            = "#44475a"  # Text selection
@@ -22,9 +22,8 @@ green                = "#50fa7b"  # Functions, methods, inherited classes
 cyan                 = "#8be9fd"  # Classes, types, support, regex
 purple               = "#bd93f9"  # Instance reserved words, constants
 pink                 = "#ff79c6"  # Keywords, storage types
-# endregion
 #
-# region ANSI Color Palette (Dracula spec)
+# ANSI Color Palette (Dracula spec)
 AnsiBlack            = "#21222c"  # color0
 AnsiRed              = "#ff5555"  # color1
 AnsiGreen            = "#50fa7b"  # color2
@@ -59,9 +58,8 @@ color12              = "#d6acff"  # AnsiBrightBlue
 color13              = "#ff92df"  # AnsiBrightMagenta
 color14              = "#a4ffff"  # AnsiBrightCyan
 color15              = "#ffffff"  # AnsiBrightWhite
-# endregion
 #
-# region UI Color Palette (Dracula spec)
+# UI Color Palette (Dracula spec)
 floating             = "#343746"
 background_lighter   = "#424450"
 background_light     = "#343746"
@@ -73,17 +71,15 @@ lighter_background   = "#424450"  # spec: Background Lighter
 light_background     = "#343746"  # spec: Background Light
 dark_background      = "#21222c"  # spec: Background Dark
 darker_background    = "#191a21"  # spec: Background Darker
-# endregion
 #
-# region Functional Colors (Dracula spec)
+# Functional Colors (Dracula spec)
 functional_red       = "#de5735"  # Critical actions, alerts
 functional_orange    = "#a39514"  # Warnings, notifications
 functional_green     = "#089108"  # Success states
 functional_cyan      = "#0081d6"  # Information, links
 functional_purple    = "#815cd6"  # Focus indicators
-# endregion
 #
-# region Extended keys consumed by Omarchy templates (Neovim, shell, lock screen)
+# Extended keys consumed by Omarchy templates (Neovim, shell, lock screen)
 accent               = "#bd93f9"  # Purple
 cursor               = "#f8f8f2"  # spec: Foreground
 selection_background = "#44475a"
@@ -92,4 +88,4 @@ muted                = "#6272a4"  # Comment / Current Line
 dark_foreground      = "#6272a4"
 light_foreground     = "#f8f8f2"
 bright_foreground    = "#ffffff"  # also used as the cursor color
-# endregion
+#

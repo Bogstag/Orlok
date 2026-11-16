@@ -5,7 +5,7 @@
 > A dark theme for [Omarchy](https://omarchy.org).
 > This Orlok Theme for Omarchy focuses on providing a cohesive and visually appealing setup for my environment.
 
-This theme is primarly for [Omarchy](<https://omarchy.org>) and is a slightly modified dracula theme.
+This theme is primarly for [Omarchy](https://omarchy.org) and is a slightly modified dracula theme.
 
 Orlok Theme is an open-source project driven by me and for me.
 Most apps that support the theme are contributions from the community.
@@ -14,12 +14,13 @@ Most apps that support the theme are contributions from the community.
 
 ## Colors
 
-| Name | Hex | Positive | Negative |
-| ---- | --- | -------- | -------- |
-| Lavender | #8a5faa | Gracefulness, calmness, and creativity | Impracticality, indecisiveness |
-| Magenta | #be007c | Kindness, self-respect, compassion, gentleness, and tolerance | Arrogance, depression, and irritability |
-| Pink | #ea4591 | Romance, tenderness, feminism, playfulness, and positivity | mmaturity, lack of self-esteem and will-power |
-| Purple | #b163c6 | Royalty, luxury, nobility, wisdom, and creativity | Arrogance, extravagance, immaturity, and impracticality |
+| Name     | Hex     | Positive                                                      | Negative                                                |
+| -------- | ------- | ------------------------------------------------------------- | ------------------------------------------------------- |
+| Lavender | #8a5faa | Gracefulness, calmness, and creativity                        | Impracticality, indecisiveness                          |
+| Magenta  | #be007c | Kindness, self-respect, compassion, gentleness, and tolerance | Arrogance, depression, and irritability                 |
+| Pink     | #ea4591 | Romance, tenderness, feminism, playfulness, and positivity    | mmaturity, lack of self-esteem and will-power           |
+| Purple   | #b163c6 | Royalty, luxury, nobility, wisdom, and creativity             | Arrogance, extravagance, immaturity, and impracticality |
+
 <!-- | | | | |  -->
 
 ### Sorted by
@@ -68,10 +69,10 @@ Most apps that support the theme are contributions from the community.
 ### Alternative colors
 
 ```css
-
-  --font-family-editor: "CaskaydiaMono Nerd Font Mono", monospace, sans-serif;
-  --font-family-preview: "CaskaydiaMono Nerd Font Mono", monospace, sans-serif;
-
+--font-family-editor:
+  "CaskaydiaMono Nerd Font Mono", monospace, sans-serif;
+--font-family-preview:
+  "CaskaydiaMono Nerd Font Mono", monospace, sans-serif;
 
 --background-modifier-success: #50fa7b; /*no sure*/
 --blockquote-border: #ffb86c;
@@ -106,7 +107,6 @@ Most apps that support the theme are contributions from the community.
 
 --vim-cursor: #ff5555;
 --text-title-h1: #ff79c6;
-
 ```
 
 ## Config
@@ -115,8 +115,8 @@ Or changes done by me, so i can remember what i have done.
 
 ### Icons
 
-| Icon theme | Sample image |
-| ------------------- | ------------ |
+| Icon theme          | Sample image                                                                |
+| ------------------- | --------------------------------------------------------------------------- |
 | `Yaru-magenta-dark` | ![Folder icon in Yaru-magenta-dark](./docs/images/Yaru-magenta-dark-24.png) |
 
 [Icons theme file](./icons.theme)

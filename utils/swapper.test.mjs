@@ -1,27 +1,37 @@
 import assert from "node:assert/strict";
 import { spawnSync } from "node:child_process";
-import { mkdirSync, mkdtempSync, readFileSync, readdirSync, rmSync, writeFileSync } from "node:fs";
+import {
+  mkdirSync,
+  mkdtempSync,
+  readFileSync,
+  readdirSync,
+  rmSync,
+  writeFileSync,
+} from "node:fs";
 import { tmpdir } from "node:os";
-import { join, resolve } from "node:path";
+import path from "node:path";
 import { after, before, test } from "node:test";
+import { test } from "vitest";
 
-const projectRoot = resolve(import.meta.dirname, ".."),
- cliPath = join(projectRoot, "utils", "swapper.ts"),
- tsxPath = join(
-  projectRoot,
-  "node_modules",
-  ".bin",
-  process.platform === "win32" ? "tsx.cmd" : "tsx",
-),
- scratchDirectories = [];
+const projectRoot = path.resolve(import.meta.dirname, ".."),
+  cliPath = path.join(projectRoot, "utils", "swapper.ts"),
+  tsxPath = path.join(
+    projectRoot,
+    "node_modules",
+    ".bin",
+    process.platform === "win32" ? "tsx.cmd" : "tsx",
+  ),
+  scratchDirectories = [];
 
 function createProject() {
-  const root = mkdtempSync(join(tmpdir(), "orlok-swapper-test-"));
+  const root = mkdtempSync(
+    path.join(tmpdir(), "orlok-swapper-test-"),
+  );
   scratchDirectories.push(root);
-  mkdirSync(join(root, "theme"), { recursive: true });
-  mkdirSync(join(root, "source"), { recursive: true });
+  mkdirSync(path.join(root, "theme"), { recursive: true });
+  mkdirSync(path.join(root, "source"), { recursive: true });
   writeFileSync(
-    join(root, "theme", "colors.toml"),
+    path.join(root, "theme", "colors.toml"),
     'primary = "#112233"\nalias = "#112233"\nsecondary = "#445566"\n',
   );
   return root;
@@ -47,9 +57,9 @@ after(() => {
 
 test("single-file input uses the first variable for shared colors and overwrites output", () => {
   const root = createProject(),
-   source = join(root, "source", "terminal.conf"),
-   output = join(root, "tpl", "terminal.conf.tpl"),
-   original = "foreground = #112233\nbackground = #445566\n";
+    source = path.join(root, "source", "terminal.conf"),
+    output = path.join(root, "tpl", "terminal.conf.tpl"),
+    original = "foreground = #112233\nbackground = #445566\n";
   writeFileSync(source, original);
 
   const firstRun = runSwapper(root, "source/terminal.conf");
@@ -72,25 +82,46 @@ test("single-file input uses the first variable for shared colors and overwrites
 
 test("directory input recursively generates flattened templates", () => {
   const root = createProject();
-  mkdirSync(join(root, "source", "nested"), { recursive: true });
-  writeFileSync(join(root, "source", "one.conf"), "one=#112233\n");
-  writeFileSync(join(root, "source", "nested", "two.conf"), "two=#445566\n");
+  mkdirSync(path.join(root, "source", "nested"), { recursive: true });
+  writeFileSync(
+    path.join(root, "source", "one.conf"),
+    "one=#112233\n",
+  );
+  writeFileSync(
+    path.join(root, "source", "nested", "two.conf"),
+    "two=#445566\n",
+  );
 
   const result = runSwapper(root, "source");
   assert.equal(result.status, 0, result.stderr);
-  assert.deepEqual(readdirSync(join(root, "tpl")).sort(), ["one.conf.tpl", "two.conf.tpl"]);
-  assert.equal(readFileSync(join(root, "tpl", "two.conf.tpl"), "utf8"), "two={{ secondary }}\n");
+  assert.deepEqual(readdirSync(path.join(root, "tpl")).toSorted(), [
+    "one.conf.tpl",
+    "two.conf.tpl",
+  ]);
+  assert.equal(
+    readFileSync(path.join(root, "tpl", "two.conf.tpl"), "utf8"),
+    "two={{ secondary }}\n",
+  );
 });
 
 test("directory input rejects duplicate output names without writing templates", () => {
   const root = createProject();
-  mkdirSync(join(root, "source", "first"), { recursive: true });
-  mkdirSync(join(root, "source", "second"), { recursive: true });
-  writeFileSync(join(root, "source", "first", "same.conf"), "first=#112233\n");
-  writeFileSync(join(root, "source", "second", "same.conf"), "second=#445566\n");
+  mkdirSync(path.join(root, "source", "first"), { recursive: true });
+  mkdirSync(path.join(root, "source", "second"), { recursive: true });
+  writeFileSync(
+    path.join(root, "source", "first", "same.conf"),
+    "first=#112233\n",
+  );
+  writeFileSync(
+    path.join(root, "source", "second", "same.conf"),
+    "second=#445566\n",
+  );
 
   const result = runSwapper(root, "source");
   assert.notEqual(result.status, 0);
-  assert.match(result.stderr, /would both write 'tpl\/same\.conf\.tpl'/);
-  assert.deepEqual(readdirSync(join(root, "tpl")), []);
+  assert.match(
+    result.stderr,
+    /would both write 'tpl\/same\.conf\.tpl'/u,
+  );
+  assert.deepEqual(readdirSync(path.join(root, "tpl")), []);
 });

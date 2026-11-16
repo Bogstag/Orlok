@@ -1,29 +1,38 @@
 #:schema https://mise.jdx.dev/schema/mise-task.json
 # tombi: format.rules.table-keys-order = "ascending"
 
+[BackupOmarchyThemed]
+description = "Copy all templates to Omarchy User Themed Directory"
+run = "cp  --update ./Templates/* $HOME/.config/omarchy/themed/"
+
 [ConvertSource2Tpl]
-  description = "Generate templates from source by using dracula theme"
-  run         = "node utils/swapper.ts ./theme/colors.dracula.omarchy.toml ./source"
+description = "Generate templates from source by using dracula theme"
+run = [
+  "rm --force ./tpl/*",
+  "node utils/swapper.ts ./theme/colors.dracula.all.toml ./source",
+]
 
 [CopyTemplates2OmarchyUserThemed]
-  description = "Copy all templates to Omarchy User Themed Directory"
-  run         = [
-    "cp ./Templates/* $HOME/.config/omarchy/themed/",
-    "cp ./TemplatesUsable/* $HOME/.config/omarchy/themed/"
-  ]
+description = "Copy all templates to Omarchy User Themed Directory"
+run = [
+  "rm --force $HOME/.config/omarchy/themed/*",
+  "cp ./tpl/* $HOME/.config/omarchy/themed/",
+  "cp --force ./TemplatesUsable/* $HOME/.config/omarchy/themed/",
+  "cp --force ./Templates/* $HOME/.config/omarchy/themed/",
+]
 
 [CopyTheme2Color]
-  description = "Copy my theme to Orlok colors.toml"
-  run         = "cp ./theme/colors.orlok.omarchy.toml /usr/share/omarchy/themes/orlok/colors.toml"
+description = "Copy theme colors.orlok.omarchy.toml to theme colors.toml"
+run = "cp ./theme/colors.orlok.omarchy.toml ./theme/orlok/colors.toml"
 
 [swap]
-  description = "Generate templates from a theme and source file or directory"
-  run         = 'node utils/swapper.ts "${usage_theme?}" "${usage_source?}"'
-  usage       = '''
+description = "Generate templates from a theme and source file or directory"
+run = 'node utils/swapper.ts "${usage_theme?}" "${usage_source?}"'
+usage = '''
 arg "<theme>" help="Path to the color theme TOML file"
 arg "<source>" help="Source file or directory to convert"
 '''
 
 [test]
-  description = "Pin versions"
-  run         = "mise use --pin node@latest npm@latest"
+description = "Pin versions"
+run = "mise use --pin node@latest npm@latest"

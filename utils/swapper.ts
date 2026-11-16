@@ -7,10 +7,9 @@ import {
   readdirSync,
   writeFileSync,
 } from "node:fs";
-import { basename, join, resolve } from "node:path";
+import path from "node:path";
 
-const colorPath = process.argv[2],
-  sourceInput = process.argv[3];
+const [colorPath, sourceInput] = process.argv.slice(2);
 
 if (!colorPath || !sourceInput) {
   console.error(
@@ -19,25 +18,28 @@ if (!colorPath || !sourceInput) {
   process.exit(1);
 }
 
-function listSourceFiles(path: string): string[] {
-  const info = lstatSync(path);
+function listSourceFiles(targetPath: string): string[] {
+  const info = lstatSync(targetPath);
 
   if (info.isSymbolicLink()) {
-    throw new Error(`Source paths cannot be symbolic links: ${path}`);
-  }
-
-  if (info.isFile()) {
-    return [path];
-  }
-  if (!info.isDirectory()) {
     throw new Error(
-      `Source path is not a file or directory: ${path}`,
+      `Source paths cannot be symbolic links: ${targetPath}`,
     );
   }
 
-  return readdirSync(path, { withFileTypes: true }).flatMap(
+  if (info.isFile()) {
+    return [targetPath];
+  }
+  if (!info.isDirectory()) {
+    throw new Error(
+      `Source path is not a file or directory: ${targetPath}`,
+    );
+  }
+
+  return readdirSync(targetPath, { withFileTypes: true }).flatMap(
     (entry) => {
-      const entryPath = join(path, entry.name);
+      const entryPath = path.join(targetPath, entry.name);
+
       if (entry.isDirectory()) {
         return listSourceFiles(entryPath);
       }
@@ -50,11 +52,13 @@ function listSourceFiles(path: string): string[] {
 }
 
 try {
-  const absoluteColorPath = resolve(colorPath);
-  const directSourcePath = resolve(sourceInput);
-  const absoluteSourcePath = existsSync(directSourcePath)
-    ? directSourcePath
-    : resolve("source", sourceInput);
+  const absoluteColorPath = path.resolve(colorPath),
+    directSourcePath = path.resolve(sourceInput);
+  let absoluteSourcePath = directSourcePath;
+
+  if (!existsSync(directSourcePath)) {
+    absoluteSourcePath = path.resolve("source", sourceInput);
+  }
 
   if (!existsSync(absoluteColorPath)) {
     throw new Error(`Color theme file does not exist: ${colorPath}`);
@@ -65,50 +69,59 @@ try {
     );
   }
 
-  const colorContent = readFileSync(absoluteColorPath, "utf-8"),
-    sourceFiles = listSourceFiles(absoluteSourcePath).sort();
+  const colorContent = readFileSync(absoluteColorPath, "utf8"),
+    sourceFiles = listSourceFiles(absoluteSourcePath).toSorted();
+
   if (sourceFiles.length === 0) {
     throw new Error(`No source files found: ${sourceInput}`);
   }
 
-  const colors = new Map<string, string>();
-  const colorRegex = /([a-zA-Z0-9_]+)\s*=\s*"*(#[a-fA-F0-9]+)"/g;
-  let match: RegExpExecArray | null;
+  const colors = new Map<string, string>(),
+    colorRegex =
+      /(?<key>[a-zA-Z0-9_]+)\s*=\s*"*(?<hex>#[a-fA-F0-9]+)"/gu;
 
-  while ((match = colorRegex.exec(colorContent)) !== null) {
-    const [, key, hex] = match;
-    if (key && hex && !colors.has(hex.toLowerCase())) {
-      // The first key for a hex value is its canonical template variable.
-      colors.set(hex.toLowerCase(), key);
+  for (const match of colorContent.matchAll(colorRegex)) {
+    const key = match.groups?.key,
+      hex = match.groups?.hex;
+
+    if (!key || !hex || colors.has(hex.toLowerCase())) {
+      continue;
     }
+
+    colors.set(hex.toLowerCase(), key);
   }
 
-  const tplDir = resolve("tpl");
+  const tplDir = path.resolve("tpl");
   mkdirSync(tplDir, { recursive: true });
 
   const outputNames = new Map<string, string>();
   for (const sourceFile of sourceFiles) {
-    const outputName = `${basename(sourceFile)}.tpl`,
+    const outputName = `${path.basename(sourceFile)}.tpl`,
       previousSource = outputNames.get(outputName);
+
     if (previousSource) {
       throw new Error(
         `Sources '${previousSource}' and '${sourceFile}' would both write 'tpl/${outputName}'.`,
       );
     }
+
     outputNames.set(outputName, sourceFile);
   }
 
   for (const sourceFile of sourceFiles) {
-    let content = readFileSync(sourceFile, "utf-8");
+    let content = readFileSync(sourceFile, "utf8");
 
     for (const [hex, key] of colors) {
       content = content.replaceAll(
-        new RegExp(hex, "gi"),
+        new RegExp(hex, "giu"),
         `{{ ${key} }}`,
       );
     }
 
-    const outputPath = join(tplDir, `${basename(sourceFile)}.tpl`);
+    const outputPath = path.join(
+      tplDir,
+      `${path.basename(sourceFile)}.tpl`,
+    );
     writeFileSync(outputPath, content);
     console.info(`Generated template: ${outputPath}`);
   }

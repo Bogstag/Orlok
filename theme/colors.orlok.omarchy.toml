@@ -9,51 +9,48 @@
 # ░ ░ ░ ▒    ░░   ░   ░ ░   ░ ░ ░ ▒  ░ ░░ ░
 #     ░ ░     ░         ░  ░    ░ ░  ░  ░
 #                                for Omarchy
-# region Orlok Omarchy
-mode                 = "dark"
-accent               = "#ea4591"  # changed
-muted                = "#33394f"  # spec: current_line
+mode                                          = "dark"
 #
-# Backgrounds pastel gradient -n 8 424450 000000
-lighter_background   = "#30323a"  # spec: Background Lighter
-light_background     = "#28292f"  # new
-background           = "#202025"  # changed
-dark_background      = "#18181b"  # changed
-darker_background    = "#0e0e11"  # changed
+accent                                        = "#ea4591"
+selection                                     = "#6272a4"
+muted                                         = "#c05acd"
 #
-# Foreground
-foreground           = "#f8f8f2"  # spec: foreground
-dark_foreground      = "#6272a4"  # spec: comment
-light_foreground     = "#ececec"  # changed
-bright_foreground    = "#ffffff"  # spec: ansibrightwhite
+lighter_background                            = "#424450"    # 1. spec: Background Lighter
+light_background                              = "#373944"    # 2. spec: background light
+background                                    = "#2d2e38"    # 3. spec: background
+dark_background                               = "#23242c"    # 4. spec: background dark
+darker_background                             = "#191a21"    # 5. spec: background darker
 #
-# colors
-red                  = "#ff5555"  # spec: red
-orange               = "#ffb86c"  # spec: orange
-yellow               = "#f1fa8c"  # spec: yellow
-green                = "#50fa7b"  # spec: green
-cyan                 = "#8be9fd"  # spec: cyan
-blue                 = "#bd93f9"  # new
-magenta              = "#ff79c6"  # new
-brown                = "#75493d"  # new
-purple               = "#bd93f9"  # spec: purple
-white                = "#f8f8f2"  # new
-black                = "#21222c"  # new
+bright_foreground                             = "#ffffff"    # spec: gright foreground, also used as the cursor color
+dark_foreground                               = "#733ea2"    # spec: dark foreground
+foreground                                    = "#f8f8f2"    # spec: foreground
+light_foreground                              = "#ececec"    # spec: light foreground
 #
-# bright colors
-bright_red           = "#ff6e6e"  # new
-bright_yellow        = "#ffffa5"  # new
-bright_green         = "#69ff94"  # new
-bright_cyan          = "#a4ffff"  # new
-bright_blue          = "#d6acff"  # new
-bright_magenta       = "#ff92df"  # new
-bright_white         = "#ffffff"  # new
-bright_black         = "#6272a4"  # new
+blue                                          = "#bd93ff"    # spec: Purple
+brown                                         = "#a39514"    # new
+cyan                                          = "#8be9fd"    # spec: cyan
+green                                         = "#14ff80"    # spec: green
+magenta                                       = "#ff51a8"    # spec: Pink
+orange                                        = "#ffb86c"    # spec: orange
+red                                           = "#ff5555"    # spec: red
+yellow                                        = "#f1fa8c"
 #
-# region Extended keys consumed by Omarchy templates (Neovim, shell, lock screen)
-cursor               = "#f8f8f2"  # spec: Foreground
-# Foreground
-selection_foreground = "#21222c"  # new: pastel mix f8f8f2 44475a
-# Background
-selection_background = "#ffb86c"  # new: pastel mix 282a36 44475a
-# endregion
+bright_red                                    = "#ff8888"    # new
+bright_green                                  = "#82fba0"    # new
+bright_yellow                                 = "#f7fcbd"    # new
+bright_blue                                   = "#dcc6ff"    # new
+bright_magenta                                = "#ff9cce"    # new
+bright_cyan                                   = "#bcf3ff"    # new
+#
+# VSCode Dracula Extended Colors
+ea459110_editor_rangeHighlightBackground      = "#ea459110"
+ea459115_editor_wordHighlightTextBackground   = "#ea459115"
+ea459120_editor_selectionHighlightBackground  = "#ea459120"
+ea459130_editor_wordHighlightStrongBackground = "#ea459130"
+ea459140_editor_selectionHighlightBorder      = "#ea459140"
+ea459160_list_focusOutline                    = "#ea459160"
+ea459180_focusBorder                          = "#ea459180"
+f1fa8c20_inputvalidation_warningbackground    = "#f1fa8c20"
+ffffff1a_editorwhitespace_foreground          = "#ffffff1a"
+ffffff40_editor_findmatchhighlightbackground  = "#ffffff40"
+ffffff45_editorindentguide_activebackground   = "#ffffff45"

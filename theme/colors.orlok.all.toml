@@ -1,0 +1,208 @@
+#
+#   ▒█████   ██▀███   ██▓     ▒█████   ██ ▄█▀
+# ▒██▒  ██▒▓██ ▒ ██▒▓██▒    ▒██▒  ██▒ ██▄█▒
+# ▒██░  ██▒▓██ ░▄█ ▒▒██░    ▒██░  ██▒▓███▄░
+# ▒██   ██░▒██▀▀█▄  ▒██░    ▒██   ██░▓██ █▄
+# ░ ████▓▒░░██▓ ▒██▒░██████▒░ ████▓▒░▒██▒ █▄
+# ░ ▒░▒░▒░ ░ ▒▓ ░▒▓░░ ▒░▓  ░░ ▒░▒░▒░ ▒ ▒▒ ▓▒
+#   ░ ▒ ▒░   ░▒ ░ ▒░░ ░ ▒  ░  ░ ▒ ▒░ ░ ░▒ ▒░
+# ░ ░ ░ ▒    ░░   ░   ░ ░   ░ ░ ░ ▒  ░ ░░ ░
+#     ░ ░     ░         ░  ░    ░ ░  ░  ░
+#                                for Omarchy
+#
+#
+mode                                             = "dark"
+#
+# VSCode Dracula Extended Colors
+# Must start with longer numbers else the smaller numbers can split them.
+21222c80_editor_foldbackground                   = "#21222c80"
+44475a70_editorgroup_dropbackground              = "#44475a70"
+50fa7b20_diffeditor_insertedtextbackground       = "#50fa7b20"
+50fa7b50_editor_wordhighlightstrongbackground    = "#50fa7b50"
+50fa7b60_extensionbutton_hoverbackground         = "#50fa7b60"
+50fa7b80_editoroverviewruler_added               = "#50fa7b80"
+50fa7b90_merge_currentheaderbackground           = "#50fa7b90"
+8be9fd50_editor_wordhighlightbackground          = "#8be9fd50"
+8be9fd80_editoroverviewruler_modified            = "#8be9fd80"
+bd93f910_activitybar_activebackground            = "#bd93f910"
+bd93f915_editor_rangehighlightbackground         = "#bd93f915"
+bd93f990_merge_incomingheaderbackground          = "#bd93f990"
+ea459180_editor_rangeHighlightBackground         = "#ea459180"
+ea459192_editor_wordHighlightTextBackground      = "#ea459192"
+ea4591a5_editor_selectionHighlightBackground     = "#ea4591a5"
+ea4591b7_editor_wordHighlightStrongBackground    = "#ea4591b7"
+ea4591c9_editor_selectionHighlightBorder         = "#ea4591c9"
+ea4591dc_list_focusOutline                       = "#ea4591dc"
+ea4591ee_focusBorder                             = "#ea4591ee"
+f1fa8c80_peekviewresult_matchhighlightbackground = "#f1fa8c80"
+ff555550_diffeditor_removedtextbackground        = "#ff555550"
+ff555580_editoroverviewruler_error               = "#ff555580"
+ff79c680_tab_activebordertop                     = "#ff79c680"
+ffb86c80_editoroverviewruler_warning             = "#ffb86c80"
+ffffff1a_editorwhitespace_foreground             = "#ffffff1a"
+ffffff40_editor_findmatchhighlightbackground     = "#ffffff40"
+ffffff45_editorindentguide_activebackground      = "#ffffff45"
+#
+# region MARK: Omarchy Colors
+# Orlok semantic palette for Omarchy v4.
+accent                                           = "#ea4592"             # changed
+selection                                        = "#272a3f"             # Text selection
+muted                                            = "#6272a4"             # Comment / Current Line
+# Backgrounds pastel gradient -n 8 424450 000000
+background                                       = "#202025"             # changed
+dark_background                                  = "#18181b"             # changed
+darker_background                                = "#0e0e11"             # changed
+lighter_background                               = "#30323a"             # changed
+# Foreground
+foreground                                       = "#f8f8f2"             # Default text
+dark_foreground                                  = "#6272a4"             # Selection
+light_foreground                                 = "#ececec"             # changed
+bright_foreground                                = "#ffffff"             # also used as the cursor color
+# Color
+blue                                             = "#bd93f9"
+brown                                            = "#75493d"             # new
+cyan                                             = "#8be9fd"             # spec: cyan
+green                                            = "#50fa7b"             # spec: green
+magenta                                          = "#ff79c6"             # new
+orange                                           = "#ffb86c"             # spec: orange
+red                                              = "#ff5555"             # spec: red
+yellow                                           = "#f1fa8c"             # spec: yellow
+# Bright Color
+bright_blue                                      = "#d6acff"             # new
+bright_cyan                                      = "#a4ffff"             # new
+bright_green                                     = "#69ff94"             # new
+bright_magenta                                   = "#ff92df"             # new
+bright_red                                       = "#ff6e6e"             # new
+bright_yellow                                    = "#ffffa5"             # new
+# endregion
+#
+# Rest of dracula to cover for others creativity.
+# Many of these cant be reached, but is there for me.
+#
+# region MARK: UI Color
+# Palette (Dracula spec)
+floating                                         = "#343746"
+background_lighter                               = "#424450"
+background_light                                 = "#343746"
+background_dark                                  = "#21222c"
+background_darker                                = "#191a21"
+# endregion
+#
+# region MARK: Reverse UI
+# Color Palette (Alias)
+light_background                                 = "#343746"             # spec: Background Light
+# endregion
+#
+# region MARK: Functional Colors
+# (Dracula spec)
+functional_red                                   = "#de5735"             # Critical actions, alerts
+functional_orange                                = "#a39514"             # Warnings, notifications
+functional_green                                 = "#089108"             # Success states
+functional_cyan                                  = "#0081d6"             # Information, links
+functional_purple                                = "#815cd6"             # Focus indicators
+# endregion
+#
+# region MARK: Color Palette
+# (Dracula spec)
+current_line                                     = "#6272a4"             # Semantic current line highlight token
+comment                                          = "#6272a4"             # Comments, disabled code
+purple                                           = "#bd93f9"             # Instance reserved words, constants
+pink                                             = "#ff79c6"             # Keywords, storage types
+# endregion
+#
+# region MARK: ANSI
+# Color Palette (Dracula spec)
+AnsiBlack                                        = "#21222c"             # color0
+AnsiRed                                          = "#ff5555"             # color1
+AnsiGreen                                        = "#50fa7b"             # color2
+AnsiYellow                                       = "#f1fa8c"             # color3
+AnsiBlue                                         = "#bd93f9"             # color4
+AnsiMagenta                                      = "#ff79c6"             # color5
+AnsiCyan                                         = "#8be9fd"             # color6
+AnsiWhite                                        = "#f8f8f2"             # color7
+AnsiBrightBlack                                  = "#6272a4"             # color8
+AnsiBrightRed                                    = "#ff6e6e"             # color9
+AnsiBrightGreen                                  = "#69ff94"             # color10
+AnsiBrightYellow                                 = "#ffffa5"             # color11
+AnsiBrightBlue                                   = "#d6acff"             # color12
+AnsiBrightMagenta                                = "#ff92df"             # color13
+AnsiBrightCyan                                   = "#a4ffff"             # color14
+AnsiBrightWhite                                  = "#ffffff"             # color15
+# endregion
+#
+# region MARK: Cursor
+# Dracula UI Elements
+LineHighlightColor                               = "#353747"             # Line-highlight
+NonTextCharacterColor                            = "#3e404a"             # Invisible
+WhiteColor                                       = "#ffffff"             # White
+TabDropBackgroundColor                           = "#343746"             # Draggable
+BackgroundColorLighter                           = "#424450"             # Lighter background
+BackgroundColorLight                             = "#343746"             # Light background
+BackgroundColorDark                              = "#21222c"             # Dark background
+BackgroundColorDarker                            = "#191a21"             # Darker background
+# endregion
+#
+# region MARK: VSCode
+# Dracula Extended Colors
+# Theme Color (Reference: https://code.visualstudio.com/api/references/theme-color)
+191a21_breadcrumbpicker_background               = "#191a21"
+21222c_debugtoolbar_background                   = "#21222c"
+282a36_breadcrumb_background                     = "#282a36"
+2d2d31_editor_lineHighlightBackground            = "#2d2d31"
+343746_activitybar_background                    = "#343746"
+424450_editor_selectionhighlightbackground       = "#424450"
+44475a_badge_background                          = "#44475a"
+50fa7b_snippetfinaltabstophighlightborder        = "#50fa7b"
+616163_editor_lineHighlightBorder                = "#616163"
+6272a4_activitybar_inactiveforeground            = "#6272a4"
+69ff94_terminal_ansibrightgreen                  = "#69ff94"
+8be9fd_editorbrackethighlight_foreground3        = "#8be9fd"
+a4ffff_terminal_ansibrightcyan                   = "#a4ffff"
+bd93f9_editorbrackethighlight_foreground5        = "#bd93f9"
+d6acff_terminal_ansibrightblue                   = "#d6acff"
+f1fa8c_terminal_ansiyellow                       = "#f1fa8c"
+f8f8f2_activitybar_foreground                    = "#f8f8f2"
+ff5555_editorbrackethighlight_unexpected         = "#ff5555"
+ff6e6e_terminal_ansibrightred                    = "#ff6e6e"
+ff79c6_activitybarbadge_background               = "#ff79c6"
+ff92df_terminal_ansibrightmagenta                = "#ff92df"
+ffb86c_editorbrackethighlight_foreground6        = "#ffb86c"
+ffffa5_terminal_ansibrightyellow                 = "#ffffa5"
+ffffff_terminal_ansibrightwhite                  = "#ffffff"
+# endregion
+#
+# region MARK: Omarchy
+# Color TOML Extended
+active_border_color                              = "#815cd6"             # Focus indicators
+active_tab_background                            = "#0081d6"             # Information, links
+cursor                                           = "#f8f8f2"             # spec: Foreground
+hyprland_active_border                           = "cyan blue 45deg"
+hyprland_inactive_border                         = "rgba(68,71,90,0.8)"
+selection_background                             = "#44475a"
+selection_foreground                             = "#f8f8f2"             # spec: Foreground
+# endregion
+#
+# background -> bright_foreground gradient
+# 202025
+# 28282d
+# 303035
+# 39393d
+# 424245
+# 4b4a4e
+# 545456
+# 5d5d5f
+# 666668
+# 707071
+# 7a7a7b
+# 838384
+# 8e8d8d
+# 989897
+# a2a2a1
+# acacaa
+# b7b7b4
+# c1c1be
+# ccccc9
+# d7d7d3
+# e2e2dd
+# edede8
+# f8f8f2

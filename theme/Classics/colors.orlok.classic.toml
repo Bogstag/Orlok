@@ -10,7 +10,7 @@
 #     ░ ░     ░         ░  ░    ░ ░  ░  ░
 #
 # region Color Palette (Dracula spec)
-background           = "#282a36"  # Main background
+background           = "#202025"  # Main background
 current_line         = "#6272a4"  # Semantic current line highlight token
 selection            = "#44475a"  # Text selection
 foreground           = "#f8f8f2"  # Default text
@@ -63,16 +63,16 @@ color15              = "#ffffff"  # AnsiBrightWhite
 #
 # region UI Color Palette (Dracula spec)
 floating             = "#343746"
-background_lighter   = "#424450"
+background_lighter   = "#30323a"
 background_light     = "#343746"
-background_dark      = "#21222c"
-background_darker    = "#191a21"
+background_dark      = "#18181b"
+background_darker    = "#0e0e11"
 #
 # Alias: Reverse UI Color Palette
-lighter_background   = "#424450"  # spec: Background Lighter
+lighter_background   = "#30323a"  # spec: Background Lighter
 light_background     = "#343746"  # spec: Background Light
-dark_background      = "#21222c"  # spec: Background Dark
-darker_background    = "#191a21"  # spec: Background Darker
+dark_background      = "#18181b"  # spec: Background Dark
+darker_background    = "#0e0e11"  # spec: Background Darker
 # endregion
 #
 # region Functional Colors (Dracula spec)
@@ -84,7 +84,7 @@ functional_purple    = "#815cd6"  # Focus indicators
 # endregion
 #
 # region Extended keys consumed by Omarchy templates (Neovim, shell, lock screen)
-accent               = "#bd93f9"  # Purple
+accent               = "#ea4592"  # Purple
 cursor               = "#f8f8f2"  # spec: Foreground
 selection_background = "#44475a"
 selection_foreground = "#f8f8f2"  # spec: Foreground

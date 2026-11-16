@@ -1,0 +1,130 @@
+#
+# ▓█████▄  ██▀███   ▄▄▄       ▄████▄   █    ██  ██▓    ▄▄▄
+# ▒██▀ ██▌▓██ ▒ ██▒▒████▄    ▒██▀ ▀█   ██  ▓██▒▓██▒   ▒████▄
+# ░██   █▌▓██ ░▄█ ▒▒██  ▀█▄  ▒▓█    ▄ ▓██  ▒██░▒██░   ▒██  ▀█▄
+# ░▓█▄   ▌▒██▀▀█▄  ░██▄▄▄▄██ ▒▓▓▄ ▄██▒▓▓█  ░██░▒██░   ░██▄▄▄▄██
+# ░▒████▓ ░██▓ ▒██▒ ▓█   ▓██▒▒ ▓███▀ ░▒▒█████▓ ░██████▒▓█   ▓██▒
+#  ▒▒▓  ▒ ░ ▒▓ ░▒▓░ ▒▒   ▓▒█░░ ░▒ ▒  ░░▒▓▒ ▒ ▒ ░ ▒░▓  ░▒▒   ▓▒█░
+#  ░ ▒  ▒   ░▒ ░ ▒░  ▒   ▒▒ ░  ░  ▒   ░░▒░ ░ ░ ░ ░ ▒  ░ ▒   ▒▒ ░
+#  ░ ░  ░   ░░   ░   ░   ▒   ░         ░░░ ░ ░   ░ ░    ░   ▒
+#    ░       ░           ░  ░░ ░         ░         ░  ░     ░  ░
+#  ░                         ░
+#                                                    for Omarchy
+#
+mode               = "dark"
+#
+# region MARK: Omarchy Colors
+# Dracula semantic palette for Omarchy v4.
+# First prio, get all Omarchy names.
+accent             = "#bd93f9"  # Purple
+selection          = "#44475a"  # Text selection
+muted              = "#6272a4"  # Comment / Current Line
+#
+background         = "#282a36"
+dark_background    = "#21222c"
+darker_background  = "#191a21"
+lighter_background = "#424450"
+#
+bright_foreground  = "#ffffff"
+dark_foreground    = "#6272a4"
+foreground         = "#f8f8f2"
+light_foreground   = "#f8f8f2"
+#
+blue               = "#bd93f9"
+brown              = "#a39514"  # Warnings, notifications
+cyan               = "#8be9fd"  # Classes, types, support, regex
+green              = "#50fa7b"  # Functions, methods, inherited classes
+magenta            = "#ff79c6"  # Keywords, storage types
+orange             = "#ffb86c"  # Numbers, constants, booleans
+red                = "#ff5555"  # Errors, warnings, deletion
+yellow             = "#f1fa8c"
+#
+bright_blue        = "#d6acff"  # AnsiBrightBlue
+bright_cyan        = "#a4ffff"  # AnsiBrightCyan
+bright_green       = "#69ff94"  # AnsiBrightGreen
+bright_magenta     = "#ff92df"  # AnsiBrightMagenta
+bright_red         = "#ff6e6e"  # AnsiBrightRed
+bright_yellow      = "#ffffa5"  # AnsiBrightYellow
+
+# region MARK: Dracula
+# Palette (Dracula spec)
+background_light = "#343746"
+# endregion
+
+# region MARK: Functional Colors
+# (Dracula spec)
+functional_red                        = "#de5735"             # Critical actions, alerts
+functional_orange                     = "#a39514"             # Warnings, notifications
+functional_green                      = "#089108"             # Success states
+functional_cyan                       = "#0081d6"             # Information, links
+functional_purple                     = "#815cd6"             # Focus indicators
+# endregion
+#
+# region MARK: Cursor
+# Dracula UI Elements
+LineHighlightColor                    = "#353747"             # Line-highlight
+NonTextCharacterColor                 = "#3e404a"             # Invisible
+# endregion
+#
+# region MARK: VSCode
+# Dracula Extended Colors
+# Theme Color (Reference: https://code.visualstudio.com/api/references/theme-color)
+2d2d31_editor_lineHighlightBackground = "#2d2d31"
+616163_editor_lineHighlightBorder     = "#616163"
+# endregion
+#
+# region MARK: Omarchy
+# Color TOML Extended
+hyprland_active_border                = "cyan blue 45deg"
+hyprland_inactive_border              = "rgba(68,71,90,0.8)"
+
+# hyprland_inactive_border                         = "rgba(424450aa)"  # trying hex, Must be in rgba hex, not decimal "rgb(66, 68, 80)"
+# Eftersom färgskalan blev inverterad så vänder vi på steken.
+# "rgba(8, 145, 8, 238)"    => rgb(255, 146, 223)
+# "rgba(40, 177, 29, 238)"  => rgb(223, 114, 202)
+# hyprland_active_border = "rgba(df72caee) rgba(ff92dfee)"  # Must be in rgba hex, not decimal = "rgba(8, 145, 8, 238) rgba(40, 177, 29, 238)"
+# endregion
+#
+#
+# VSCode Dracula Extended Colors
+# There is no color lik them above,so they dont get cut.
+ea459110_editor_rangeHighlightBackground      = "#ea459110"
+ea459115_editor_wordHighlightTextBackground   = "#ea459115"
+ea459120_editor_selectionHighlightBackground  = "#ea459120"
+ea459130_editor_wordHighlightStrongBackground = "#ea459130"
+ea459140_editor_selectionHighlightBorder      = "#ea459140"
+ea459160_list_focusOutline                    = "#ea459160"
+ea459180_focusBorder                          = "#ea459180"
+f1fa8c20_inputvalidation_warningbackground    = "#f1fa8c20"
+ffffff1a_editorwhitespace_foreground          = "#ffffff1a"
+ffffff40_editor_findmatchhighlightbackground  = "#ffffff40"
+ffffff45_editorindentguide_activebackground   = "#ffffff45"
+#
+# Not Needed Smaller colors cut them and all works.
+# bd93f910_activitybar_activebackground            = "#bd93f910"
+# bd93f915_editor_rangehighlightbackground         = "#bd93f915"
+# bd93f920_notebook_symbolhighlightbackground      = "#bd93f920"
+# bd93f930_list_filtermatchbackground              = "#bd93f930"
+# bd93f940_notebook_selectedcellborder             = "#bd93f940"
+# bd93f960_list_focusoutline                       = "#bd93f960"
+# bd93f980_scrollbarslider_activebackground        = "#bd93f980"
+# bd93f990_merge_incomingheaderbackground          = "#bd93f990"
+# 44475a70_editorgroup_dropbackground              = "#44475a70"
+# 44475a80_selection_background                    = "#44475a80"
+# 6272a440_scrollbarslider_background              = "#6272a440"
+# 6272a480_scrollbarslider_hoverbackground         = "#6272a480"
+# 282a3680_widget_shadow                           = "#282a3680"
+# 21222c80_editor_foldbackground                   = "#21222c80"
+# 8be9fd50_editor_wordhighlightbackground          = "#8be9fd50"
+# 8be9fd80_editoroverviewruler_modified            = "#8be9fd80"
+# 50fa7b20_diffeditor_insertedtextbackground       = "#50fa7b20"
+# 50fa7b50_editor_wordhighlightstrongbackground    = "#50fa7b50"
+# 50fa7b60_extensionbutton_hoverbackground         = "#50fa7b60"
+# 50fa7b80_editoroverviewruler_added               = "#50fa7b80"
+# 50fa7b90_merge_currentheaderbackground           = "#50fa7b90"
+# ff79c680_tab_activebordertop                     = "#ff79c680"
+# ffb86c80_editoroverviewruler_warning             = "#ffb86c80"
+# ff555520_inputvalidation_errorbackground         = "#ff555520"
+# ff555550_diffeditor_removedtextbackground        = "#ff555550"
+# ff555580_editoroverviewruler_error               = "#ff555580"
+# f1fa8c80_peekviewresult_matchhighlightbackground = "#f1fa8c80"
