@@ -31,14 +31,14 @@ function createProject() {
   mkdirSync(path.join(root, "theme"), { recursive: true });
   mkdirSync(path.join(root, "source"), { recursive: true });
   writeFileSync(
-    path.join(root, "theme", "colors.toml"),
+    path.join(root, "theme", "colours.toml"),
     'primary = "#112233"\nalias = "#112233"\nsecondary = "#445566"\n',
   );
   return root;
 }
 
 function runSwapper(root, source) {
-  return spawnSync(tsxPath, [cliPath, "theme/colors.toml", source], {
+  return spawnSync(tsxPath, [cliPath, "theme/colours.toml", source], {
     cwd: root,
     encoding: "utf8",
     shell: process.platform === "win32",
@@ -55,7 +55,7 @@ after(() => {
   }
 });
 
-test("single-file input uses the first variable for shared colors and overwrites output", () => {
+test("single-file input uses the first variable for shared colours and overwrites output", () => {
   const root = createProject(),
     source = path.join(root, "source", "terminal.conf"),
     output = path.join(root, "tpl", "terminal.conf.tpl"),

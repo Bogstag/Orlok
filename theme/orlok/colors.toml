@@ -1,0 +1,87 @@
+#
+#   ▒█████   ██▀███   ██▓     ▒█████   ██ ▄█▀
+# ▒██▒  ██▒▓██ ▒ ██▒▓██▒    ▒██▒  ██▒ ██▄█▒
+# ▒██░  ██▒▓██ ░▄█ ▒▒██░    ▒██░  ██▒▓███▄░
+# ▒██   ██░▒██▀▀█▄  ▒██░    ▒██   ██░▓██ █▄
+# ░ ████▓▒░░██▓ ▒██▒░██████▒░ ████▓▒░▒██▒ █▄
+# ░ ▒░▒░▒░ ░ ▒▓ ░▒▓░░ ▒░▓  ░░ ▒░▒░▒░ ▒ ▒▒ ▓▒
+#   ░ ▒ ▒░   ░▒ ░ ▒░░ ░ ▒  ░  ░ ▒ ▒░ ░ ░▒ ▒░
+# ░ ░ ░ ▒    ░░   ░   ░ ░   ░ ░ ░ ▒  ░ ░░ ░
+#     ░ ░     ░         ░  ░    ░ ░  ░  ░
+#                                for Omarchy
+mode               = "dark"
+#
+accent             = "#ff1493"
+selection          = "#994cb7"
+muted              = "#6272a4"
+#
+darker_background  = "#0e0e14"    # 5. spec: background darker
+dark_background    = "#13141c"    # 4. spec: background dark
+background         = "#1a1b26"    # 3. spec: background
+light_background   = "#373944"    # 2. spec: background light
+lighter_background = "#44475a"    # 1. spec: Background Lighter
+dark_foreground    = "#6272a4"    # 4. spec: dark foreground
+foreground         = "#a9b1d6"    # 3. spec: foreground
+light_foreground   = "#b4bee6"    # 2. spec: light foreground
+bright_foreground  = "#f8f8f2"    # 1. spec: bright foreground, also used as the cursor color
+#
+blue               = "#bd93ff"    # spec: Purple
+brown              = "#a39514"    # new
+cyan               = "#8be9fd"    # spec: cyan
+green              = "#14ff80"    # spec: green
+magenta            = "#ff51a8"    # spec: Pink
+orange             = "#ffb86c"    # spec: orange
+red                = "#ff5555"    # spec: red
+yellow             = "#f1fa8c"
+#
+bright_red         = "#ff8888"    # new
+bright_green       = "#82fba0"    # new
+bright_yellow      = "#f7fcbd"    # new
+bright_blue        = "#dcc6ff"    # new
+bright_magenta     = "#ff9cce"    # new
+bright_cyan        = "#bcf3ff"    # new
+#
+# VSCode Dracula Extended Colours
+# There is no color lik them above,so they dont get cut.
+ff00004d           = "#ff55554d"
+ff000099           = "#ff555599"
+#
+# Not Needed Smaller colors cut them and all works.
+# 21222c80 = "#21222c80"  # dark_background 80 Transparent
+# 282a3680 = "#282a3680"  # background 80 Transparent
+# 44475a70 = "#44475a70"  # selection 70 Transparent
+# 44475a80 = "#44475a80"  # selection 80 Transparent
+# 50fa7b20 = "#50fa7b20"  # green 20 Transparent,  This color must be transparent or it will obscure content
+# 50fa7b50 = "#50fa7b50"  # green 50 Transparent
+# 50fa7b60 = "#50fa7b60"  # green 60 Transparent
+# 50fa7b80 = "#50fa7b80"  # green 80 Transparent
+# 50fa7b90 = "#50fa7b90"  # green 90 Transparent
+# 6272a440 = "#6272a440"  # dark_foreground 40 Transparent
+# 6272a480 = "#6272a480"  # dark_foreground 80 Transparent
+# 8be9fd50 = "#8be9fd50"  # cyan 50 transparent
+# 8be9fd80 = "#8be9fd80"  # cyan 80 transparent
+# bd93f910 = "#bd93f910"  # blue 10 transparent
+# bd93f915 = "#bd93f915"  # blue 15 transparent, This color must be transparent or it will obscure content
+# bd93f920 = "#bd93f920"  # blue 20 transparent
+# bd93f930 = "#bd93f930"  # blue 30 transparent
+# bd93f940 = "#bd93f940"  # blue 40 transparent
+# bd93f960 = "#bd93f960"  # blue 60 transparent
+# bd93f980 = "#bd93f980"  # blue 80 transparent
+# bd93f990 = "#bd93f990"  # blue 90 transparent
+# ea459110 = "#ea459110"  # accent 10 transparent
+# ea459115 = "#ea459115"  # accent 15 transparent
+# ea459120 = "#ea459120"  # accent 20 transparent
+# ea459130 = "#ea459130"  # accent 30 transparent
+# ea459140 = "#ea459140"  # accent 40 transparent
+# ea459160 = "#ea459160"  # accent 60 transparent
+# ea459180 = "#ea459180"  # accent 80 transparent
+# f1fa8c20 = "#f1fa8c20"  # yellow 20 transparent
+# f1fa8c80 = "#f1fa8c80"  # yellow 80 transparent, This color must be transparent or it will obscure content
+# ff555520 = "#ff555520"  # red 20 transparent
+# ff555550 = "#ff555550"  # red 50 transparent
+# ff555580 = "#ff555580"  # red 80 transparent
+# ff79c680 = "#ff79c680"  # magenta 80 transparent
+# ffb86c80 = "#ffb86c80"  # orange 80 transparent
+# ffffff1a = "#ffffff1a"  # bright_foreground 26 transparent
+# ffffff40 = "#ffffff40"  # bright_foreground 40 transparent
+# ffffff45 = "#ffffff45"  # bright_foreground 45 transparent

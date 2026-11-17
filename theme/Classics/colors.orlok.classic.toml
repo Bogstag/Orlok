@@ -9,7 +9,7 @@
 # ░ ░ ░ ▒    ░░   ░   ░ ░   ░ ░ ░ ▒  ░ ░░ ░
 #     ░ ░     ░         ░  ░    ░ ░  ░  ░
 #
-# region Color Palette (Dracula spec)
+# region Colour Palette (Dracula spec)
 background           = "#202025"  # Main background
 current_line         = "#6272a4"  # Semantic current line highlight token
 selection            = "#44475a"  # Text selection
@@ -24,7 +24,7 @@ purple               = "#bd93f9"  # Instance reserved words, constants
 pink                 = "#ff79c6"  # Keywords, storage types
 # endregion
 #
-# region ANSI Color Palette (Dracula spec)
+# region ANSI Colour Palette (Dracula spec)
 AnsiBlack            = "#21222c"  # color0
 AnsiRed              = "#ff5555"  # color1
 AnsiGreen            = "#50fa7b"  # color2
@@ -42,7 +42,7 @@ AnsiBrightMagenta    = "#ff92df"  # color13
 AnsiBrightCyan       = "#a4ffff"  # color14
 AnsiBrightWhite      = "#ffffff"  # color15
 #
-# Alias: ANSI Color Palette
+# Alias: ANSI Colour Palette
 color0               = "#21222c"  # AnsiBlack
 color1               = "#ff5555"  # AnsiRed
 color2               = "#50fa7b"  # AnsiGreen
@@ -61,21 +61,21 @@ color14              = "#a4ffff"  # AnsiBrightCyan
 color15              = "#ffffff"  # AnsiBrightWhite
 # endregion
 #
-# region UI Color Palette (Dracula spec)
+# region UI Colour Palette (Dracula spec)
 floating             = "#343746"
 background_lighter   = "#30323a"
 background_light     = "#343746"
 background_dark      = "#18181b"
 background_darker    = "#0e0e11"
 #
-# Alias: Reverse UI Color Palette
+# Alias: Reverse UI Colour Palette
 lighter_background   = "#30323a"  # spec: Background Lighter
 light_background     = "#343746"  # spec: Background Light
 dark_background      = "#18181b"  # spec: Background Dark
 darker_background    = "#0e0e11"  # spec: Background Darker
 # endregion
 #
-# region Functional Colors (Dracula spec)
+# region Functional Colours (Dracula spec)
 functional_red       = "#de5735"  # Critical actions, alerts
 functional_orange    = "#a39514"  # Warnings, notifications
 functional_green     = "#089108"  # Success states

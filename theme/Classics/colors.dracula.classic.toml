@@ -9,7 +9,7 @@
 #  ░ ░  ░   ░░   ░   ░   ▒   ░         ░░░ ░ ░   ░ ░    ░   ▒
 #    ░       ░           ░  ░░ ░         ░         ░  ░     ░  ░
 #  ░                         ░
-# Color Palette (Dracula spec)
+# Colour Palette (Dracula spec)
 background           = "#282a36"  # Main background
 current_line         = "#6272a4"  # Semantic current line highlight token
 selection            = "#44475a"  # Text selection
@@ -23,7 +23,7 @@ cyan                 = "#8be9fd"  # Classes, types, support, regex
 purple               = "#bd93f9"  # Instance reserved words, constants
 pink                 = "#ff79c6"  # Keywords, storage types
 #
-# ANSI Color Palette (Dracula spec)
+# ANSI Colour Palette (Dracula spec)
 AnsiBlack            = "#21222c"  # color0
 AnsiRed              = "#ff5555"  # color1
 AnsiGreen            = "#50fa7b"  # color2
@@ -41,7 +41,7 @@ AnsiBrightMagenta    = "#ff92df"  # color13
 AnsiBrightCyan       = "#a4ffff"  # color14
 AnsiBrightWhite      = "#ffffff"  # color15
 #
-# Alias: ANSI Color Palette
+# Alias: ANSI Colour Palette
 color0               = "#21222c"  # AnsiBlack
 color1               = "#ff5555"  # AnsiRed
 color2               = "#50fa7b"  # AnsiGreen
@@ -59,20 +59,20 @@ color13              = "#ff92df"  # AnsiBrightMagenta
 color14              = "#a4ffff"  # AnsiBrightCyan
 color15              = "#ffffff"  # AnsiBrightWhite
 #
-# UI Color Palette (Dracula spec)
+# UI Colour Palette (Dracula spec)
 floating             = "#343746"
 background_lighter   = "#424450"
 background_light     = "#343746"
 background_dark      = "#21222c"
 background_darker    = "#191a21"
 #
-# Alias: Reverse UI Color Palette
+# Alias: Reverse UI Colour Palette
 lighter_background   = "#424450"  # spec: Background Lighter
 light_background     = "#343746"  # spec: Background Light
 dark_background      = "#21222c"  # spec: Background Dark
 darker_background    = "#191a21"  # spec: Background Darker
 #
-# Functional Colors (Dracula spec)
+# Functional Colours (Dracula spec)
 functional_red       = "#de5735"  # Critical actions, alerts
 functional_orange    = "#a39514"  # Warnings, notifications
 functional_green     = "#089108"  # Success states

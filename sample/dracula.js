@@ -18,10 +18,11 @@ class Vampire {
   }
 }
 
-// ...there was a guy named Vlad
+// ...there was a guy named Orlok
+// oxlint-disable-next-line no-unused-vars -- Its a bloody example, read the room!
 const Dracula = new Vampire({
-  location: "Transylvania",
   birthDate: 1428,
   deathDate: 1476,
+  location: "Transylvania",
   weaknesses: ["Sunlight", "Garlic"],
 });

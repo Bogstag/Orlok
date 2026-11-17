@@ -1,0 +1,6 @@
+#!/bin/bash
+
+[[ ${1:-} == orlok ]] || exit 0
+[[ $(omarchy plymouth current) == orlok ]] && exit 0
+
+omarchy launch floating terminal with presentation "omarchy plymouth set by theme orlok"

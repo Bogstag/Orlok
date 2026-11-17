@@ -12,7 +12,7 @@ Most apps that support the theme are contributions from the community.
 
 <!-- ![Not a Preview](./no-preview.png) -->
 
-## Colors
+## Colours
 
 | Name     | Hex     | Positive                                                      | Negative                                                |
 | -------- | ------- | ------------------------------------------------------------- | ------------------------------------------------------- |
@@ -66,7 +66,7 @@ Most apps that support the theme are contributions from the community.
 - #955ca7
 - #8a5faa
 
-### Alternative colors
+### Alternative colours
 
 ```css
 --font-family-editor:
@@ -98,7 +98,7 @@ Most apps that support the theme are contributions from the community.
 --text-muted: #f8f8f2;
 --text-normal: #f8f8f2;
 --text-on-accent: #bd93f9;
---text-selection: #6272a4; /* Chromium precess this color with alpha channel */
+--text-selection: #6272a4; /* Chromium precess this colour with alpha channel */
 --text-title-h2: #bd93f9;
 --text-title-h3: #ff5555;
 --text-title-h4: #ffb86c;

@@ -9,11 +9,11 @@ import {
 } from "node:fs";
 import path from "node:path";
 
-const [colorPath, sourceInput] = process.argv.slice(2);
+const [colourPath, sourceInput] = process.argv.slice(2);
 
-if (!colorPath || !sourceInput) {
+if (!colourPath || !sourceInput) {
   console.error(
-    "Usage: tsx utils/swapper.ts <path-to-colors.toml> <source-file-or-directory>",
+    "Usage: tsx utils/swapper.ts <path-to-colours.toml> <source-file-or-directory>",
   );
   process.exit(1);
 }
@@ -52,7 +52,7 @@ function listSourceFiles(targetPath: string): string[] {
 }
 
 try {
-  const absoluteColorPath = path.resolve(colorPath),
+  const absoluteColourPath = path.resolve(colourPath),
     directSourcePath = path.resolve(sourceInput);
   let absoluteSourcePath = directSourcePath;
 
@@ -60,8 +60,10 @@ try {
     absoluteSourcePath = path.resolve("source", sourceInput);
   }
 
-  if (!existsSync(absoluteColorPath)) {
-    throw new Error(`Color theme file does not exist: ${colorPath}`);
+  if (!existsSync(absoluteColourPath)) {
+    throw new Error(
+      `Colour theme file does not exist: ${colourPath}`,
+    );
   }
   if (!existsSync(absoluteSourcePath)) {
     throw new Error(
@@ -69,26 +71,26 @@ try {
     );
   }
 
-  const colorContent = readFileSync(absoluteColorPath, "utf8"),
+  const colourContent = readFileSync(absoluteColourPath, "utf8"),
     sourceFiles = listSourceFiles(absoluteSourcePath).toSorted();
 
   if (sourceFiles.length === 0) {
     throw new Error(`No source files found: ${sourceInput}`);
   }
 
-  const colors = new Map<string, string>(),
-    colorRegex =
+  const colours = new Map<string, string>(),
+    colourRegex =
       /(?<key>[a-zA-Z0-9_]+)\s*=\s*"*(?<hex>#[a-fA-F0-9]+)"/gu;
 
-  for (const match of colorContent.matchAll(colorRegex)) {
+  for (const match of colourContent.matchAll(colourRegex)) {
     const key = match.groups?.key,
       hex = match.groups?.hex;
 
-    if (!key || !hex || colors.has(hex.toLowerCase())) {
+    if (!key || !hex || colours.has(hex.toLowerCase())) {
       continue;
     }
 
-    colors.set(hex.toLowerCase(), key);
+    colours.set(hex.toLowerCase(), key);
   }
 
   const tplDir = path.resolve("tpl");
@@ -111,7 +113,7 @@ try {
   for (const sourceFile of sourceFiles) {
     let content = readFileSync(sourceFile, "utf8");
 
-    for (const [hex, key] of colors) {
+    for (const [hex, key] of colours) {
       content = content.replaceAll(
         new RegExp(hex, "giu"),
         `{{ ${key} }}`,

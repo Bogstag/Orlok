@@ -2,37 +2,40 @@
 # tombi: format.rules.table-keys-order = "ascending"
 
 [BackupOmarchyThemed]
-description = "Copy all templates to Omarchy User Themed Directory"
-run = "cp  --update ./Templates/* $HOME/.config/omarchy/themed/"
+  description = "Copy all templates to Omarchy User Themed Directory"
+  run         = "cp  --update ./Templates/* $HOME/.config/omarchy/themed/"
 
 [ConvertSource2Tpl]
-description = "Generate templates from source by using dracula theme"
-run = [
-  "rm --force ./tpl/*",
-  "node utils/swapper.ts ./theme/colors.dracula.all.toml ./source",
-]
+  description = "Generate templates from source by using dracula theme"
+  run         = [
+    "rm --force ./tpl/*",
+    "node utils/swapper.ts ./theme/colors.dracula.all.toml ./source",
+  ]
 
 [CopyTemplates2OmarchyUserThemed]
-description = "Copy all templates to Omarchy User Themed Directory"
-run = [
-  "rm --force $HOME/.config/omarchy/themed/*",
-  "cp ./tpl/* $HOME/.config/omarchy/themed/",
-  "cp --force ./TemplatesUsable/* $HOME/.config/omarchy/themed/",
-  "cp --force ./Templates/* $HOME/.config/omarchy/themed/",
-]
+  description = "Copy all templates to Omarchy User Themed Directory"
+  run         = [
+    "rm --force $HOME/.config/omarchy/themed/*",
+    "cp ./tpl/* $HOME/.config/omarchy/themed/",
+    "cp --force ./TemplatesUsable/* $HOME/.config/omarchy/themed/",
+    "cp --force ./Templates/* $HOME/.config/omarchy/themed/",
+  ]
 
-[CopyTheme2Color]
-description = "Copy theme colors.orlok.omarchy.toml to theme colors.toml"
-run = "cp ./theme/colors.orlok.omarchy.toml ./theme/orlok/colors.toml"
+[CopyTheme2Colour]
+  description = "Copy theme colours.orlok.omarchy.toml to theme colors.toml"
+  run         = [
+    "cp ./theme/colors.orlok.omarchy.toml ./theme/orlok/colors.toml",
+    "omarchy theme set orlok"
+  ]
 
 [swap]
-description = "Generate templates from a theme and source file or directory"
-run = 'node utils/swapper.ts "${usage_theme?}" "${usage_source?}"'
-usage = '''
-arg "<theme>" help="Path to the color theme TOML file"
+  description = "Generate templates from a theme and source file or directory"
+  run         = 'node utils/swapper.ts "${usage_theme?}" "${usage_source?}"'
+  usage       = '''
+arg "<theme>" help="Path to the colour theme TOML file"
 arg "<source>" help="Source file or directory to convert"
 '''
 
 [test]
-description = "Pin versions"
-run = "mise use --pin node@latest npm@latest"
+  description = "Pin versions"
+  run         = "mise use --pin node@latest npm@latest"
