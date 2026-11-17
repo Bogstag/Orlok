@@ -9,7 +9,6 @@
     "suspicious": "warn"
   },
   "env": { "builtin": true, "esnext": true },
-  "extends": ["/home/bogge/.oxlintrc.jsonc"],
   "ignorePatterns": [
     "*.min.js",
     "coverage/**",
