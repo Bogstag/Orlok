@@ -5,11 +5,11 @@
   auto = true
 
 [env]
-  NODE_ENV = { default = "development" }
   _.path   = ["{{config_root}}/node_modules/.bin"]
+  NODE_ENV = { default = "development" }
 
 [settings]
-  idiomatic_version_file_enable_tools  = ["node", "npm"]
+  idiomatic_version_file_enable_tools  = ["node", "npm", "vp"]
   idiomatic_version_file_disable_files = ["node:package.json"]
   npm.package_manager                  = "npm"
   experimental                         = true

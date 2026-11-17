@@ -3,7 +3,6 @@
   "allowSeparatedGroups": true,
   "checkExportFrom": true,
   "extendDefaultStyles": false,
-  "extends": "/home/bogge/.oxfmtrc.jsonc",
   "ignoreDeclarationSort": true,
   "ignorePatterns": [
     "*.min.js",
